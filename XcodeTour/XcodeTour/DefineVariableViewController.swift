@@ -4,6 +4,8 @@ class DefineVariableViewController: UIViewController {
 
     // Define any instance variables here
     
+    var tempArray = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -29,7 +31,7 @@ class DefineVariableViewController: UIViewController {
         // TODO: Transfer the values in formattedTextArray to the textToDisplay property in our prepare for segue function
         // Hint: How would you store a value if you wanted to access it across different functions?
         
-
+        tempArray = formattedTextArray
         matchTheArrayHere()
     }
     
@@ -37,7 +39,7 @@ class DefineVariableViewController: UIViewController {
         if let destinationVC = segue.destination as? NiceWorkViewController {
             
             // TODO: Assign the destinationVC's textToDisplay property to what was stored in formattedTextArray above
-            destinationVC.textToDisplay = [] // Change this!
+            destinationVC.textToDisplay = tempArray // Change this!
         }
     }
 }

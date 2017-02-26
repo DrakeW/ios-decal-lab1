@@ -21,11 +21,10 @@ class OptionalsViewController: UIViewController {
     @IBAction func testForOptional(_ sender: Any) {
         
         // TODO: Implement proper usage of optionals to prevent app from crashing
-        let randomString = returnStringAtRandom()!
-        passInNonOptional(randomString)
-        
-
-        
+        let randomString = returnStringAtRandom()
+        if let text = randomString {
+            passInNonOptional(text)
+        }
         successCount += 1
         if (successCount >= 3 && didBecomeNull) {
             textOutput.text = "Good job! You've completed this portion. Move on to the next"
